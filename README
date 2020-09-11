@@ -1,0 +1,5 @@
+#安装命令
+helm install  kubernetes-dashboard   kubernetes-dashboard/kubernetes-dashboard --values values.yaml  -n dashboard
+
+#获取token
+kubectl -n kube-system describe $(kubectl -n kube-system get secret -n kube-system -o name | grep namespace) | grep token
